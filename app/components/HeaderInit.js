@@ -12,6 +12,8 @@ import {
   View,
   Image,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Container, Content, Button } from 'native-base';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import ScrollableTabView, {DefaultTabBar } from 'react-native-scrollable-tab-view';
 
@@ -23,19 +25,23 @@ export default class HeaderInit extends Component {
       backgroundColor="white"
       contentBackgroundColor="white"
       stickyHeaderHeight={ 70 }
-     parallaxHeaderHeight={ 200 }
+     parallaxHeaderHeight={ 179 }
       renderForeground={() => (
-        <View style={{ height: 100, flex: 1}}>
+        <View style={{ height: 90, flex: 1}}>
           <View style={styles.bgImageWrapper}>
+            <Text style={styles.title}>Perfil</Text>
+            <Button style={styles.buttonsFlaotRight}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+            <Button style={styles.buttonsFlaotLeft}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
             <Image source={require('../assets/img/imageproxy.jpg')} style={styles.bgImage} />
+            <Image source={require('../assets/img/eu.jpeg')} style={styles.avatar} />
           </View>
           <View style={styles.bgProfile}>
-              <Image source={require('../assets/img/eu.jpeg')} style={styles.avatar} />
               <Text style={styles.name}>
-                  Marcelo Gomes de Oliveira
+                  Marcelo Oliveira
               </Text>
           </View>
         </View>
+
       )}
       renderFixedHeader={() => (
         <View >
@@ -48,18 +54,18 @@ export default class HeaderInit extends Component {
         <View style={styles.bgProfileMin}>
             <Image source={require('../assets/img/eu.jpeg')} style={styles.avatarMin} />
             <Text style={styles.nameMin}>
-                Marcelo Gomes de Oliveira
+                Marcelo Oliveira
             </Text>
         </View>
       )}>
       <View style={{ height: 500 }}>
         <ScrollableTabView
-          style={{marginTop: 20, overflow:'hidden'}}
+          style={{marginTop:0, overflow:'hidden'}}
           renderTabBar={() => <DefaultTabBar />}
         >
           <Text tabLabel='Tab #1'>My</Text>
-          <Text tabLabel='Tab #2 aaaaaaaaaaaa'>favorite aaaaaaaaaaaa</Text>
-          <Text tabLabel='Tab #3'>project ccccccccccccc</Text>
+          <Text tabLabel='Tab #2 '>favorite </Text>
+          <Text tabLabel='Tab #3'>project </Text>
         </ScrollableTabView>
       </View>
     </ParallaxScrollView>
@@ -76,20 +82,69 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  title: {
+    position: 'absolute',
+    alignSelf: 'center',
+    zIndex:10,
+    color: '#FFFFFF',
+    flex: 1,
+    left:20,
+    fontSize:30,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
   avatar: {
-    width:60,
-    height:60,
-    borderRadius:30,
+    width:80,
+    height:80,
+    borderRadius:40,
     bottom:0,
-    margin: 15,
+    top:90,
+    zIndex:10,
+    position: 'absolute',
+    margin: 0,
+    left:10,
+    marginRight:10
+  },
+  buttonsFlaotLeft:{
+    position: 'absolute',
+    width:50,
+    height:50,
+    borderRadius:25,
+    backgroundColor: '#2A83F2',
+    shadowColor:'#000000',
+    elevation: 10,
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 5,
+    shadowOpacity: 1.0,
+    top:10,
+    right:80
+  },
+  buttonsFlaotRight:{
+    position: 'absolute',
+    width:50,
+    height:50,
+    backgroundColor: '#6DAF4E',
+    borderRadius:25,
+    top:10,
+    right: 20
   },
   name: {
     flex: 1,
     width:100,
     fontSize: 18,
     textAlign: 'left',
-    marginTop:30,
+    marginTop:5,
+    marginBottom:30,
+    fontWeight: 'bold',
     margin: 10,
+    left: 90,
   },
   avatarMin: {
     width:40,
@@ -103,6 +158,7 @@ const styles = StyleSheet.create({
     width:100,
     fontSize: 15,
     textAlign: 'left',
+    fontWeight: 'bold',
     marginTop:20,
     margin: 10,
   },
