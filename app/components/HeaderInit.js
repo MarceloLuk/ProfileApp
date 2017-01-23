@@ -15,7 +15,8 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Container, Content, Button } from 'native-base';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import ScrollableTabView, {DefaultTabBar } from 'react-native-scrollable-tab-view';
+import ScrollableTabView, {ScrollableTabBar } from 'react-native-scrollable-tab-view';
+import Overview from './pages/Overview';
 
 
 export default class HeaderInit extends Component {
@@ -29,26 +30,19 @@ export default class HeaderInit extends Component {
       renderForeground={() => (
         <View style={{ height: 90, flex: 1}}>
           <View style={styles.bgImageWrapper}>
-            <Text style={styles.title}>Perfil</Text>
             <Button style={styles.buttonsFlaotRight}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
             <Button style={styles.buttonsFlaotLeft}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
-            <Image source={require('../assets/img/imageproxy.jpg')} style={styles.bgImage} />
+            <Image source={require('../assets/img/coffee.jpg')} style={styles.bgImage} />
             <Image source={require('../assets/img/eu.jpeg')} style={styles.avatar} />
           </View>
           <View style={styles.bgProfile}>
               <Text style={styles.name}>
                   Marcelo Oliveira
               </Text>
+              <Text style={styles.noteName} note>Desenvolvedor</Text>
           </View>
         </View>
 
-      )}
-      renderFixedHeader={() => (
-        <View >
-          <Text >
-            ASUDHASUDH UASHDUASDH HASDUHA UASHDASHUDSAD
-          </Text>
-        </View>
       )}
       renderStickyHeader={() => (
         <View style={styles.bgProfileMin}>
@@ -56,16 +50,25 @@ export default class HeaderInit extends Component {
             <Text style={styles.nameMin}>
                 Marcelo Oliveira
             </Text>
+            <Button style={styles.buttonsFlaotRightMin}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+            <Button style={styles.buttonsFlaotLeftMin}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
         </View>
       )}>
       <View style={{ height: 500 }}>
         <ScrollableTabView
-          style={{marginTop:0, overflow:'hidden'}}
-          renderTabBar={() => <DefaultTabBar />}
+          renderTabBar={() => <ScrollableTabBar
+            style={styles.tabs} />}
+            tabBarTextStyle={{
+              color: '#000000'
+            }}
+            tabBarUnderlineStyle={styles.underlineTabs}
         >
-          <Text tabLabel='Tab #1'>My</Text>
-          <Text tabLabel='Tab #2 '>favorite </Text>
-          <Text tabLabel='Tab #3'>project </Text>
+        <Overview tabLabel="Perfil"/>
+        <Text tabLabel='Tab #1'  >My</Text>
+        <Text tabLabel='Tab #2 word word' >favorite</Text>
+        <Text tabLabel='Tab #3 word word word' >project</Text>
+        <Text tabLabel='Tab #4 word word word word' >favorite</Text>
+        <Text tabLabel='Tab #5'>project</Text>
         </ScrollableTabView>
       </View>
     </ParallaxScrollView>
@@ -116,13 +119,6 @@ const styles = StyleSheet.create({
     borderRadius:25,
     backgroundColor: '#2A83F2',
     shadowColor:'#000000',
-    elevation: 10,
-    shadowOffset: {
-      width: 0,
-      height: 3
-    },
-    shadowRadius: 5,
-    shadowOpacity: 1.0,
     top:10,
     right:80
   },
@@ -130,21 +126,41 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width:50,
     height:50,
-    backgroundColor: '#6DAF4E',
+    backgroundColor: '#72AE4A',
     borderRadius:25,
     top:10,
     right: 20
   },
+  buttonsFlaotLeftMin:{
+    position: 'absolute',
+    width:40,
+    height:40,
+    borderRadius:20,
+    backgroundColor: '#2A83F2',
+    shadowColor:'#000000',
+    top:10,
+    right:70
+  },
+  buttonsFlaotRightMin:{
+    position: 'absolute',
+    width:40,
+    height:40,
+    backgroundColor: '#72AE4A',
+    borderRadius:20,
+    top:10,
+    right: 20
+  },
   name: {
-    flex: 1,
-    width:100,
     fontSize: 18,
     textAlign: 'left',
     marginTop:5,
-    marginBottom:30,
     fontWeight: 'bold',
-    margin: 10,
-    left: 90,
+    left: 100,
+  },
+  noteName:{
+    textAlign: 'left',
+    left: 100,
+    marginBottom:20,
   },
   avatarMin: {
     width:40,
@@ -164,7 +180,6 @@ const styles = StyleSheet.create({
   },
   bgProfile:{
     marginTop:120,
-     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   bgProfileMin:{
@@ -193,5 +208,14 @@ const styles = StyleSheet.create({
       width: null,
       height: null,
       resizeMode: 'cover'
+  },
+  tabs:{
+    borderBottomWidth:0,
+    marginLeft:10,
+    marginRight:10,
+    borderBottomColor: '#34CCFE'
+  },
+  underlineTabs: {
+    backgroundColor: '#90BCEB'
   }
 });
