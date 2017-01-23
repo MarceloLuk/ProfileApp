@@ -11,22 +11,23 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Container, Content, Card, CardItem, Text } from 'native-base';
+import ProgressBarAnimated from 'progress-bar-animated';
 
 
-export default class Overview extends Component {
+export default class Skills extends Component {
   render() {
     return (
       <Container style={styles.contentBox}>
           <Content>
               <Card style={styles.boxShadow}>
                   <CardItem>
-                    <Text style={styles.title}>Resumo</Text>
-                      <Text >
-                        &nbsp;&nbsp;&nbsp; Ofereço às empresas um profissional não só preparado para atuar de
-                        acordo com as tendências atuais de mercado, mas também qualificado para
-                        o desenvolvimento sistemas web e mobile, com objetivo de superar novos desafios e
-                        adquirir experiência.
-                      </Text>
+                    <Text style={styles.title}>Skills</Text>
+                      <ProgressBarAnimated
+                      progress={50} 
+                      style={{marginLeft: 16, marginRight: 16}}
+                      filledColor='red'
+                      unfilledColor='white'
+                      />
                   </CardItem>
                   <CardItem >
                        <Text style={styles.ajusteText}><Icon name="calendar" style={{ color: '#DD5044' }} />  Data de nascimento: 15/04/1991</Text>

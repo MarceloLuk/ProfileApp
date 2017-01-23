@@ -17,6 +17,8 @@ import { Container, Content, Button } from 'native-base';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import ScrollableTabView, {ScrollableTabBar } from 'react-native-scrollable-tab-view';
 import Overview from './pages/Overview';
+import Experience from './pages/Experience';
+import Skills from './pages/Skills';
 
 
 export default class HeaderInit extends Component {
@@ -54,7 +56,7 @@ export default class HeaderInit extends Component {
             <Button style={styles.buttonsFlaotLeftMin}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
         </View>
       )}>
-      <View style={{ height: 500 }}>
+      <View style={{ minHeight: 500 }}>
         <ScrollableTabView
           renderTabBar={() => <ScrollableTabBar
             style={styles.tabs} />}
@@ -64,8 +66,8 @@ export default class HeaderInit extends Component {
             tabBarUnderlineStyle={styles.underlineTabs}
         >
         <Overview tabLabel="Perfil"/>
-        <Text tabLabel='Tab #1'  >My</Text>
-        <Text tabLabel='Tab #2 word word' >favorite</Text>
+        <Experience tabLabel="Experiência"/>
+        <Skills tabLabel="Competências"/>
         <Text tabLabel='Tab #3 word word word' >project</Text>
         <Text tabLabel='Tab #4 word word word word' >favorite</Text>
         <Text tabLabel='Tab #5'>project</Text>
