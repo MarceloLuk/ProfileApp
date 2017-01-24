@@ -8,10 +8,12 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  Image,
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Container, Content, Card, CardItem, Text } from 'native-base';
-import ProgressBarAnimated from 'progress-bar-animated';
+import ProgressBarClassic from 'react-native-progress-bar-classic';
 
 
 export default class Skills extends Component {
@@ -21,20 +23,16 @@ export default class Skills extends Component {
           <Content>
               <Card style={styles.boxShadow}>
                   <CardItem>
-                    <Text style={styles.title}>Skills</Text>
-                      <ProgressBarAnimated
-                      progress={50} 
-                      style={{marginLeft: 16, marginRight: 16}}
-                      filledColor='red'
-                      unfilledColor='white'
-                      />
+                    <Text style={styles.title}>Nivel de conhecimento</Text>
                   </CardItem>
-                  <CardItem >
-                       <Text style={styles.ajusteText}><Icon name="calendar" style={{ color: '#DD5044' }} />  Data de nascimento: 15/04/1991</Text>
+                  <CardItem>
+                    <Image style={styles.speakerAvatar} source={require('../../assets/img/php-7.png')} />
+                    <ProgressBarClassic
+                      progress={100}
+                      valueStyle={'default'}
+                    />
                   </CardItem>
-                  <CardItem >
-                       <Text style={styles.ajusteText}><Icon name="user-circle" style={{ color: '#DD5044' }} />  Estado civil: Casado</Text>
-                  </CardItem>
+
               </Card>
           </Content>
       </Container>
@@ -53,6 +51,11 @@ const styles = StyleSheet.create({
     fontSize:18,
     fontWeight: 'bold',
     color:'#666666'
+  },
+  speakerAvatar: {
+    resizeMode: 'contain',
+    width:35,
+    height:50,
   },
   boxShadow: {
     borderWidth: .5,

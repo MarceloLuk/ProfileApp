@@ -12,9 +12,13 @@ var _reactNative=require('react-native');
 
 
 
+var _FontAwesome=require('react-native-vector-icons/FontAwesome');var _FontAwesome2=babelHelpers.interopRequireDefault(_FontAwesome);
 var _nativeBase=require('native-base');
 var _reactNativeParallaxScrollView=require('react-native-parallax-scroll-view');var _reactNativeParallaxScrollView2=babelHelpers.interopRequireDefault(_reactNativeParallaxScrollView);
-var _reactNativeScrollableTabView=require('react-native-scrollable-tab-view');var _reactNativeScrollableTabView2=babelHelpers.interopRequireDefault(_reactNativeScrollableTabView);var
+var _reactNativeScrollableTabView=require('react-native-scrollable-tab-view');var _reactNativeScrollableTabView2=babelHelpers.interopRequireDefault(_reactNativeScrollableTabView);
+var _Overview=require('./pages/Overview');var _Overview2=babelHelpers.interopRequireDefault(_Overview);
+var _Experience=require('./pages/Experience');var _Experience2=babelHelpers.interopRequireDefault(_Experience);
+var _Skills=require('./pages/Skills');var _Skills2=babelHelpers.interopRequireDefault(_Skills);var
 
 
 HeaderInit=function(_Component){babelHelpers.inherits(HeaderInit,_Component);function HeaderInit(){babelHelpers.classCallCheck(this,HeaderInit);return babelHelpers.possibleConstructorReturn(this,(HeaderInit.__proto__||Object.getPrototypeOf(HeaderInit)).apply(this,arguments));}babelHelpers.createClass(HeaderInit,[{key:'render',value:function render()
@@ -28,22 +32,16 @@ parallaxHeaderHeight:179,
 renderForeground:function renderForeground(){return(
 _react2.default.createElement(_reactNative.View,{style:{height:90,flex:1}},
 _react2.default.createElement(_reactNative.View,{style:styles.bgImageWrapper},
-_react2.default.createElement(_reactNative.Text,{style:styles.title},'Perfil'),
-
-_react2.default.createElement(_reactNative.Image,{source:require('../assets/img/imageproxy.jpg'),style:styles.bgImage}),
+_react2.default.createElement(_nativeBase.Button,{style:styles.buttonsFlaotRight},_react2.default.createElement(_FontAwesome2.default,{name:'plus',style:{color:'#FFFFFF'}})),
+_react2.default.createElement(_nativeBase.Button,{style:styles.buttonsFlaotLeft},_react2.default.createElement(_FontAwesome2.default,{name:'envelope',style:{color:'#FFFFFF'}})),
+_react2.default.createElement(_reactNative.Image,{source:require('../assets/img/coffee.jpg'),style:styles.bgImage}),
 _react2.default.createElement(_reactNative.Image,{source:require('../assets/img/eu.jpeg'),style:styles.avatar})),
 
 _react2.default.createElement(_reactNative.View,{style:styles.bgProfile},
-_react2.default.createElement(_reactNative.Text,{style:styles.name},'Marcelo Oliveira'))));},
+_react2.default.createElement(_reactNative.Text,{style:styles.name},'Marcelo Oliveira'),
 
 
-
-
-
-
-renderFixedHeader:function renderFixedHeader(){return(
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.Text,null,'ASUDHASUDH UASHDUASDH HASDUHA UASHDASHUDSAD')));},
+_react2.default.createElement(_reactNative.Text,{style:styles.noteName,note:true},'Desenvolvedor'))));},
 
 
 
@@ -51,19 +49,28 @@ _react2.default.createElement(_reactNative.Text,null,'ASUDHASUDH UASHDUASDH HASD
 renderStickyHeader:function renderStickyHeader(){return(
 _react2.default.createElement(_reactNative.View,{style:styles.bgProfileMin},
 _react2.default.createElement(_reactNative.Image,{source:require('../assets/img/eu.jpeg'),style:styles.avatarMin}),
-_react2.default.createElement(_reactNative.Text,{style:styles.nameMin},'Marcelo Oliveira')));}},
+_react2.default.createElement(_reactNative.Text,{style:styles.nameMin},'Marcelo Oliveira'),
 
 
+_react2.default.createElement(_nativeBase.Button,{style:styles.buttonsFlaotRightMin},_react2.default.createElement(_FontAwesome2.default,{name:'plus',style:{color:'#FFFFFF'}})),
+_react2.default.createElement(_nativeBase.Button,{style:styles.buttonsFlaotLeftMin},_react2.default.createElement(_FontAwesome2.default,{name:'envelope',style:{color:'#FFFFFF'}}))));}},
 
 
-_react2.default.createElement(_reactNative.View,{style:{height:500}},
+_react2.default.createElement(_reactNative.View,{style:{minHeight:500}},
 _react2.default.createElement(_reactNativeScrollableTabView2.default,{
-style:{marginTop:0,overflow:'hidden'},
-renderTabBar:function renderTabBar(){return _react2.default.createElement(_reactNativeScrollableTabView.DefaultTabBar,null);}},
+renderTabBar:function renderTabBar(){return _react2.default.createElement(_reactNativeScrollableTabView.ScrollableTabBar,{
+style:styles.tabs});},
+tabBarTextStyle:{
+color:'#000000'},
 
-_react2.default.createElement(_reactNative.Text,{tabLabel:'Tab #1'},'My'),
-_react2.default.createElement(_reactNative.Text,{tabLabel:'Tab #2 '},'favorite '),
-_react2.default.createElement(_reactNative.Text,{tabLabel:'Tab #3'},'project ')))));
+tabBarUnderlineStyle:styles.underlineTabs},
+
+_react2.default.createElement(_Overview2.default,{tabLabel:'Perfil'}),
+_react2.default.createElement(_Experience2.default,{tabLabel:'Experi\xEAncia'}),
+_react2.default.createElement(_Skills2.default,{tabLabel:'Compet\xEAncias'}),
+_react2.default.createElement(_reactNative.Text,{tabLabel:'Tab #3 word word word'},'project'),
+_react2.default.createElement(_reactNative.Text,{tabLabel:'Tab #4 word word word word'},'favorite'),
+_react2.default.createElement(_reactNative.Text,{tabLabel:'Tab #5'},'project')))));
 
 
 
@@ -107,16 +114,55 @@ margin:0,
 left:10,
 marginRight:10},
 
+buttonsFlaotLeft:{
+position:'absolute',
+width:50,
+height:50,
+borderRadius:25,
+backgroundColor:'#2A83F2',
+shadowColor:'#000000',
+top:10,
+right:80},
+
+buttonsFlaotRight:{
+position:'absolute',
+width:50,
+height:50,
+backgroundColor:'#72AE4A',
+borderRadius:25,
+top:10,
+right:20},
+
+buttonsFlaotLeftMin:{
+position:'absolute',
+width:40,
+height:40,
+borderRadius:20,
+backgroundColor:'#2A83F2',
+shadowColor:'#000000',
+top:10,
+right:70},
+
+buttonsFlaotRightMin:{
+position:'absolute',
+width:40,
+height:40,
+backgroundColor:'#72AE4A',
+borderRadius:20,
+top:10,
+right:20},
+
 name:{
-flex:1,
-width:100,
 fontSize:18,
 textAlign:'left',
 marginTop:5,
-marginBottom:30,
 fontWeight:'bold',
-margin:10,
-left:90},
+left:100},
+
+noteName:{
+textAlign:'left',
+left:100,
+marginBottom:20},
 
 avatarMin:{
 width:40,
@@ -136,7 +182,6 @@ margin:10},
 
 bgProfile:{
 marginTop:120,
-flexDirection:'row',
 backgroundColor:'#FFFFFF'},
 
 bgProfileMin:{
@@ -164,4 +209,13 @@ bgImage:{
 flex:1,
 width:null,
 height:null,
-resizeMode:'cover'}});
+resizeMode:'cover'},
+
+tabs:{
+borderBottomWidth:0,
+marginLeft:10,
+marginRight:10,
+borderBottomColor:'#34CCFE'},
+
+underlineTabs:{
+backgroundColor:'#90BCEB'}});
