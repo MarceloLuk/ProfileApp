@@ -15,6 +15,14 @@ import {
 import HeaderInit from './app/components/HeaderInit';
 
 export default class ProfileApp extends Component {
+  constructor(props) {
+   super(props);
+   this.clearText = this.clearText.bind(this);
+ }
+
+ clearText() {
+   this._textInput.setNativeProps({text: ''});
+ }
   render() {
     return (
         <HeaderInit />

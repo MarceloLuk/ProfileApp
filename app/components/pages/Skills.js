@@ -26,13 +26,197 @@ export default class Skills extends Component {
                     <Text style={styles.title}>Nivel de conhecimento</Text>
                   </CardItem>
                   <CardItem>
-                    <Image style={styles.speakerAvatar} source={require('../../assets/img/php-7.png')} />
-                    <ProgressBarClassic
-                      progress={100}
-                      valueStyle={'default'}
-                    />
-                  </CardItem>
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={styles.speakerAvatar} source={require('../../assets/img/php-7.png')} />
+                      </View>
+                      <View style={styles.details}>
 
+                      <Text>PHP</Text>
+                        <ProgressBarClassic
+                          progress={100}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/symfony.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Symfony</Text>
+                        <ProgressBarClassic
+                          progress={100}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/github.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Github</Text>
+                        <ProgressBarClassic
+                          progress={100}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/reactNe.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>React Native</Text>
+                        <ProgressBarClassic
+                          progress={100}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/2.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Ionic 2</Text>
+                        <ProgressBarClassic
+                          progress={100}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/mq1.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>AngularJs</Text>
+                        <ProgressBarClassic
+                          progress={100}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/postgres.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Postgres</Text>
+                        <ProgressBarClassic
+                          progress={90}
+                          color='#efef23'
+                          style={{backgroundColor:'#666666'}}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/linux.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Linux</Text>
+                        <ProgressBarClassic
+                          progress={90}
+                          color='#efef23'
+                          style={{backgroundColor:'#666666'}}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/docker.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Docker</Text>
+                        <ProgressBarClassic
+                          progress={80}
+                          color='#efef23'
+                          style={{backgroundColor:'#666666'}}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/sql.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>SQL</Text>
+                        <ProgressBarClassic
+                          progress={80}
+                          color='#efef23'
+                          style={{backgroundColor:'#666666'}}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/python.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>Python</Text>
+                        <ProgressBarClassic
+                          progress={50}
+                          color='#efef23'
+                          style={{backgroundColor:'#666666'}}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+
+                    <View style={styles.columnSkill}>
+                      <View>
+                        <Image style={{resizeMode: 'contain',
+                        width:35,
+                        height:60}} source={require('../../assets/img/reactNe.png')} />
+                      </View>
+                      <View style={styles.details}>
+                      <Text>React.js</Text>
+                        <ProgressBarClassic
+                          progress={50}
+                          color='#efef23'
+                          style={{backgroundColor:'#666666'}}
+                          valueStyle={'balloon'}
+                        />
+                      </View>
+                    </View>
+                  </CardItem>
               </Card>
           </Content>
       </Container>
@@ -79,5 +263,23 @@ const styles = StyleSheet.create({
   },
   colorText:{
     color:'#666666',
+  },
+  columnSkill: {
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingRight: 15,
+  },
+  timeContainer: {
+    width: 40
+  },
+  details: {
+    flexDirection: 'column',
+    flex: 1,
+    zIndex:10,
+    marginLeft: 20,
+    marginTop:10
   }
 });

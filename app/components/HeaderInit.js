@@ -19,6 +19,8 @@ import ScrollableTabView, {ScrollableTabBar } from 'react-native-scrollable-tab-
 import Overview from './pages/Overview';
 import Experience from './pages/Experience';
 import Skills from './pages/Skills';
+import Language from './pages/Language';
+import Contact from './pages/Contact';
 
 
 export default class HeaderInit extends Component {
@@ -68,9 +70,8 @@ export default class HeaderInit extends Component {
         <Overview tabLabel="Perfil"/>
         <Experience tabLabel="Experiência"/>
         <Skills tabLabel="Competências"/>
-        <Text tabLabel='Tab #3 word word word' >project</Text>
-        <Text tabLabel='Tab #4 word word word word' >favorite</Text>
-        <Text tabLabel='Tab #5'>project</Text>
+        <Language tabLabel="Idiomas"/>
+        <Contact tabLabel="Links"/>
         </ScrollableTabView>
       </View>
     </ParallaxScrollView>
