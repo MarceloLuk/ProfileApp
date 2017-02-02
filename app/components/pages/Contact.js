@@ -24,7 +24,7 @@ export default class Contact extends Component {
           <Content>
               <Card>
                 <CardItem>
-                  <TouchableHighlight  onPress={this.clearText}>
+                  <TouchableHighlight>
                       <Text> <Icon name="linkedin-square" style={{ color: '#1683BB', fontSize:25 }} />   Linkedin</Text>
                   </TouchableHighlight>
                 </CardItem>
