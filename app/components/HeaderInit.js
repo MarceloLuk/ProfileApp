@@ -11,6 +11,8 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
+  Linking,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Container, Content, Button } from 'native-base';
@@ -24,6 +26,10 @@ import Contact from './pages/Contact';
 
 
 export default class HeaderInit extends Component {
+
+  sendMail () {
+    Linking.openURL('mailto://marceloluk.gomes@gmail.com');
+  }
   render() {
     return (
       <ParallaxScrollView
@@ -32,10 +38,11 @@ export default class HeaderInit extends Component {
       stickyHeaderHeight={ 70 }
      parallaxHeaderHeight={ 179 }
       renderForeground={() => (
-        <View style={{ height: 90, flex: 1}}>
+        <View style={{ height: 10, flex: 1}}>
+          <Button style={styles.buttonsFlaotRight}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+          <Button style={styles.buttonsFlaotLeft} onPress={this.sendMail}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
           <View style={styles.bgImageWrapper}>
-            <Button style={styles.buttonsFlaotRight}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
-            <Button style={styles.buttonsFlaotLeft}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
+
             <Image source={require('../assets/img/coffee.jpg')} style={styles.bgImage} />
             <Image source={require('../assets/img/eu.jpeg')} style={styles.avatar} />
           </View>
@@ -55,7 +62,7 @@ export default class HeaderInit extends Component {
                 Marcelo Oliveira
             </Text>
             <Button style={styles.buttonsFlaotRightMin}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
-            <Button style={styles.buttonsFlaotLeftMin}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
+            <Button style={styles.buttonsFlaotLeftMin} onPress={this.sendMail}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
         </View>
       )}>
       <View style={{ minHeight: 500 }}>
@@ -119,6 +126,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width:50,
     height:50,
+    zIndex:9999,
     borderRadius:25,
     backgroundColor: '#2A83F2',
     shadowColor:'#000000',

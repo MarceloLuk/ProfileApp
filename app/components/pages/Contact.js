@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Image,
   View,
-  TouchableHighlight,
+  TouchableOpacity,
+  Linking,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Container, Content, Card, CardItem, Text } from 'native-base';
@@ -18,21 +19,45 @@ import ProgressBarClassic from 'react-native-progress-bar-classic';
 
 
 export default class Contact extends Component {
+  openGithub () {
+    Linking.openURL('https://github.com/MarceloLuk');
+  }
+
+  openLinkedin () {
+    Linking.openURL('https://br.linkedin.com/in/marcelo-gomes-16935437');
+  }
+
+  openFacebook () {
+    Linking.openURL('https://fb.com/marcelogd');
+  }
+
+  openTwitter () {
+    Linking.openURL('https://twitter.com/marcelo_luk');
+  }
   render() {
     return (
       <Container style={styles.contentBox}>
           <Content>
               <Card>
                 <CardItem>
-                  <TouchableHighlight>
+                  <TouchableOpacity onPress={this.openGithub}>
+                      <Text> <Icon name="github" style={{  fontSize:25 }} />   Github</Text>
+                  </TouchableOpacity>
+                </CardItem>
+                <CardItem>
+                  <TouchableOpacity onPress={this.openLinkedin}>
                       <Text> <Icon name="linkedin-square" style={{ color: '#1683BB', fontSize:25 }} />   Linkedin</Text>
-                  </TouchableHighlight>
+                  </TouchableOpacity>
                 </CardItem>
                 <CardItem>
-                    <Text> <Icon name="facebook-square" style={{ color: '#4B66A1', fontSize:25 }} />   Facebook</Text>
+                  <TouchableOpacity onPress={this.openFacebook}>
+                      <Text> <Icon name="facebook-square" style={{ color: '#4B66A1', fontSize:25 }} />   Facebook</Text>
+                  </TouchableOpacity>
                 </CardItem>
                 <CardItem>
+                  <TouchableOpacity onPress={this.openTwitter}>
                     <Text> <Icon name="twitter-square" style={{ color: '#1DA1F2', fontSize:25 }} />   Twitter</Text>
+                  </TouchableOpacity>
                 </CardItem>
              </Card>
           </Content>

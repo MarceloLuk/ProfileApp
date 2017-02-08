@@ -33,7 +33,7 @@ export default class Language extends Component {
                     />
                     <Text>Inglês</Text>
                       <ProgressBarClassic
-                        progress={30}
+                        progress={40}
                         valueStyle={'balloon'}
                     />
                   </CardItem>
