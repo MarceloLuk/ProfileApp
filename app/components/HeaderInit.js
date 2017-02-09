@@ -28,7 +28,10 @@ import Contact from './pages/Contact';
 export default class HeaderInit extends Component {
 
   sendMail () {
-    Linking.openURL('mailto://marceloluk.gomes@gmail.com');
+    Linking.openURL('mailto:marceloluk.gomes@gmail.com');
+  }
+  sendTel () {
+    Linking.openURL('tel:61995389910');
   }
   render() {
     return (
@@ -39,7 +42,7 @@ export default class HeaderInit extends Component {
      parallaxHeaderHeight={ 179 }
       renderForeground={() => (
         <View style={{ height: 10, flex: 1}}>
-          <Button style={styles.buttonsFlaotRight}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+          <Button style={styles.buttonsFlaotRight} onPress={this.sendTel}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
           <Button style={styles.buttonsFlaotLeft} onPress={this.sendMail}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
           <View style={styles.bgImageWrapper}>
 
@@ -61,7 +64,7 @@ export default class HeaderInit extends Component {
             <Text style={styles.nameMin}>
                 Marcelo Oliveira
             </Text>
-            <Button style={styles.buttonsFlaotRightMin}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+            <Button style={styles.buttonsFlaotRightMin} onPress={this.sendTel}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
             <Button style={styles.buttonsFlaotLeftMin} onPress={this.sendMail}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
         </View>
       )}>
@@ -130,7 +133,7 @@ const styles = StyleSheet.create({
     borderRadius:25,
     backgroundColor: '#2A83F2',
     shadowColor:'#000000',
-    top:10,
+    top:60,
     right:80
   },
   buttonsFlaotRight:{
@@ -139,8 +142,9 @@ const styles = StyleSheet.create({
     height:50,
     backgroundColor: '#72AE4A',
     borderRadius:25,
-    top:10,
-    right: 20
+    top:60,
+    right: 20,
+    zIndex:9999,
   },
   buttonsFlaotLeftMin:{
     position: 'absolute',
