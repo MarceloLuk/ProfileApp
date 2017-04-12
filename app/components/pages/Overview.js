@@ -20,12 +20,12 @@ export default class Overview extends Component {
           <Content>
               <Card style={styles.boxShadow}>
                   <CardItem>
-                    <Text style={styles.title}>Resumo</Text>
+                    <Text style={styles.title}>Objetivo</Text>
                       <Text >
-                        &nbsp;&nbsp;&nbsp; Ofereço às empresas um profissional não só preparado para atuar de
-                        acordo com as tendências atuais de mercado, mas também qualificado para
-                        o desenvolvimento sistemas web e mobile, com objetivo de superar novos desafios e
-                        adquirir experiência.
+                        &nbsp;&nbsp;&nbsp; Oferecer às empresas um profissional não só
+                          preparado para atuar de acordo com as tendências atuais de mercado,
+                          mas também qualificado para o desenvolvimento sistemas Web e Mobile,
+                          com objetivo de superar novos desafios e adquirir experiência
                       </Text>
                   </CardItem>
                   <CardItem >

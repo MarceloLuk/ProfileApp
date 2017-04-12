@@ -42,12 +42,12 @@ export default class HeaderInit extends Component {
      parallaxHeaderHeight={ 179 }
       renderForeground={() => (
         <View style={{ height: 10, flex: 1}}>
-          <Button style={styles.buttonsFlaotRight} onPress={this.sendTel}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+          <Button style={styles.buttonsFlaotRight} onPress={this.sendTel}><Icon name='phone' style={{color: '#FFFFFF'}}/></Button>
           <Button style={styles.buttonsFlaotLeft} onPress={this.sendMail}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
           <View style={styles.bgImageWrapper}>
 
             <Image source={require('../assets/img/coffee.jpg')} style={styles.bgImage} />
-            <Image source={require('../assets/img/eu.jpeg')} style={styles.avatar} />
+            <Image source={require('../assets/img/eu2.jpeg')} style={styles.avatar} />
           </View>
           <View style={styles.bgProfile}>
               <Text style={styles.name}>
@@ -60,11 +60,11 @@ export default class HeaderInit extends Component {
       )}
       renderStickyHeader={() => (
         <View style={styles.bgProfileMin}>
-            <Image source={require('../assets/img/eu.jpeg')} style={styles.avatarMin} />
+            <Image source={require('../assets/img/eu2.jpeg')} style={styles.avatarMin} />
             <Text style={styles.nameMin}>
                 Marcelo Oliveira
             </Text>
-            <Button style={styles.buttonsFlaotRightMin} onPress={this.sendTel}><Icon name='plus' style={{color: '#FFFFFF'}}/></Button>
+            <Button style={styles.buttonsFlaotRightMin} onPress={this.sendTel}><Icon name='phone' style={{color: '#FFFFFF'}}/></Button>
             <Button style={styles.buttonsFlaotLeftMin} onPress={this.sendMail}><Icon name='envelope' style={{color: '#FFFFFF'}}/></Button>
         </View>
       )}>
