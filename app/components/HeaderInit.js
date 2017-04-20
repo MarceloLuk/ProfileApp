@@ -47,20 +47,20 @@ export default class HeaderInit extends Component {
           <View style={styles.bgImageWrapper}>
 
             <Image source={require('../assets/img/coffee.jpg')} style={styles.bgImage} />
-            <Image source={require('../assets/img/eu2.jpeg')} style={styles.avatar} />
+            <Image source={require('../assets/img/eu2.jpg')} style={styles.avatar} />
           </View>
           <View style={styles.bgProfile}>
               <Text style={styles.name}>
                   Marcelo Oliveira
               </Text>
-              <Text style={styles.noteName} note>Desenvolvedor</Text>
+              <Text style={styles.noteName} note>Analista Programador</Text>
           </View>
         </View>
 
       )}
       renderStickyHeader={() => (
         <View style={styles.bgProfileMin}>
-            <Image source={require('../assets/img/eu2.jpeg')} style={styles.avatarMin} />
+            <Image source={require('../assets/img/eu2.jpg')} style={styles.avatarMin} />
             <Text style={styles.nameMin}>
                 Marcelo Oliveira
             </Text>
